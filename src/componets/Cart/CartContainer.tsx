@@ -1,7 +1,6 @@
 import { connect } from "react-redux"
 import { AppStateType } from "../../redux/redux-store"
-import { getCart } from "../../redux/cart-reducer"
-import { deleteFromCart } from "../../redux/cart-reducer"
+import { deleteFromCart, getCart, updateCartQ } from "../../redux/cart-reducer"
 import Cart from "./Cart"
 import { useEffect } from "react"
 import { CartResponseType } from "../../types/types"
@@ -11,6 +10,7 @@ type CartContainerPropsType = {
     subtotal: string,
     getCart: () => void,
     deleteFromCart: (productId: number | string) => void,
+    updateCartQ: (productId: string, quantity: number) => void,
 }
 
 const CartContainer: React.FunctionComponent <CartContainerPropsType> = (props) => {
@@ -20,7 +20,7 @@ const CartContainer: React.FunctionComponent <CartContainerPropsType> = (props) 
     }, [] )
 
     return (
-        <Cart cart = {props.cart} deleteFromCart = {props.deleteFromCart} subtotal = {props.subtotal} />
+        <Cart cart = {props.cart} deleteFromCart = {props.deleteFromCart} subtotal = {props.subtotal} updateCartQ = {props.updateCartQ} />
     )
 }
 
@@ -31,4 +31,4 @@ let mapStateToProps = (state: AppStateType) => {
     }
 }
 
-export default connect (mapStateToProps, {getCart, deleteFromCart} )(CartContainer);
+export default connect (mapStateToProps, {getCart, deleteFromCart, updateCartQ} )(CartContainer);

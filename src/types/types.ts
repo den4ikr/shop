@@ -11,6 +11,7 @@ export type ListResponseType = {
 }
 
 export type CartResponseType = {
+    quantity: number,
     id: string,
     media: {
         source: string,

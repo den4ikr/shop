@@ -1,13 +1,13 @@
 import { CartResponseType } from "../../types/types";
-import {Card, CardActions, CardContent, CardMedia, IconButton, Typography} from "@material-ui/core"
+import {Button, Card, CardActions, CardContent, CardMedia, IconButton, Typography} from "@material-ui/core"
 import DeleteIcon from '@material-ui/icons/Delete'
 import useStyle from "./CartItem/CartItemStyle"
-import Preloader from "../Preloader/Preloader";
 
 type CartPropsType = {
     cart: Array <CartResponseType>,
     subtotal: string,
     deleteFromCart: (productId: number | string) => void,
+    updateCartQ: (productId: string, quantity: number) => void,
 }
 
 const Cart: React.FunctionComponent <CartPropsType> = (props) => {  
@@ -32,7 +32,14 @@ const Cart: React.FunctionComponent <CartPropsType> = (props) => {
                                                 </Typography>
                                             </div>
                                         </CardContent>
-                                        <CardActions disableSpacing className={s.cardActions} >
+                                        <CardActions disableSpacing className={s.cardActions} > 
+                                            <div className = {s.subButtonsRow} >
+                                                <Button onClick = { () => props.updateCartQ (c.id, c.quantity - 1) } type = "button" size = "small" >-</Button>
+                                                <Typography>
+                                                    {c.quantity}
+                                                </Typography>
+                                                <Button onClick = { () => props.updateCartQ (c.id, c.quantity + 1) } type = "button" size = "small" >+</Button>
+                                            </div>
                                             <IconButton area-label="Add to cart" onClick = { () => props.deleteFromCart (c.id) } >
                                                 <DeleteIcon />
                                             </IconButton>

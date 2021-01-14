@@ -13,7 +13,7 @@ const Header: React.FunctionComponent = (props) => {
        <div className = {s.headerWrapper} >
             <div className = {s.row} >
                 <div className = {s.menu} >
-                    <NavLink to = "/" >
+                    <NavLink to = "/shop" >
                         MAIN
                     </NavLink>
                 </div>

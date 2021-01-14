@@ -4,7 +4,6 @@ const useStyles  = createUseStyles ({
     headerWrapper: {
         maxWidth: "1300px",
         margin: "0 auto",
-        backgroundColor: "black",
     },
     row: {
         display: "flex",

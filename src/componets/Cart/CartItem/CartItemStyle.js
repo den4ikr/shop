@@ -16,10 +16,19 @@ export default makeStyles ( () => ({
     },
     cardActions: {
         display: "flex",
-        justifyContent: "flex-end",
+        justifyContent: "space-between",
     },
     cardContent: {
         display: "flex",
         justifyContent: "space-between",
+    },
+    buttonsRow: {
+        display: "flex",
+        justifyContent: "space-between",
+    },
+    subButtonsRow: {
+        display: 'flex',
+        alignItems: 'center',
+        
     },
 }) )
