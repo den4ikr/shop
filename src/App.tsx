@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Header />
       <div className = "container" >
-        <Route path = "/shop" render = { () => <ListContaier /> } />
+        <Route extact path = "/shop" render = { () => <ListContaier /> } />
         <Route path = "/cart" render = { () => <CartContainer /> } />
       </div>
     </div>
