@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Header />
       <div className = "container" >
-        <Route exact path = "/shop" render = { () => <ListContaier /> } />
+        <Route path = "/shop" render = { () => <ListContaier /> } />
         <Route path = "/cart" render = { () => <CartContainer /> } />
       </div>
     </div>
